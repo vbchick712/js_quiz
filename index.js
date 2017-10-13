@@ -1,3 +1,27 @@
+var myQuestions = [
+  {
+    question: "What is 1+1?",
+    answers: {
+      a: '11',
+      b: '2',
+      c: 'true',
+      d: 'none of the above'
+    },
+    correctAnswer: 'b'
+  },
+  {
+    question: "What is 1*1?",
+    answers: {
+      a: '100',
+      b: '11',
+      c: '1',
+      d: 'none of the above'
+    },
+    correctAnswer: 'c'
+  },
+];
+
+
 var quizContainer = document.getElementByID('quiz');
 var resultsContainer = document. getElementByID('results');
 var submitButton = document.getElementByID('submit');
@@ -8,11 +32,11 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     var answers;
 
     //for each question...
-    for(var i=0; i<quesitons.length; i++){
+    for(var i=0; i<questions.length; i++){
       //first reset the list of answers
       answers = [];
       //for each available answer to this question...
-      for(letter inquestions[i].answers){
+      for(letter in questions[i].answers){
         //...add an html radio button
         answers.push(
           '<lable>'
@@ -25,7 +49,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
       //add this question and its answers to the output
       output.push(
-        '<div class="question">' + questions[i].question + '</dov>'
+        '<div class="question">' + questions[i].question + '</div>'
         + '<div class="answers">' + answers.join('')+'</div>'
       );
     }
@@ -76,26 +100,3 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     showResults(questions, quizContainer, resultsContainer);
   }
 }
-
-var myQuestions = [
-  {
-    question: "What is 1+1?",
-    answers: {
-      a: '11',
-      b: '2',
-      c: 'true',
-      d: 'none of the above'
-    },
-    correctAnswer: 'b'
-  },
-  {
-    question: "What is 1*1?",
-    answers: {
-      a: '100',
-      b: '11',
-      c: '1',
-      d: 'none of the above'
-    },
-    correctAnswer: 'c'
-  },
-];

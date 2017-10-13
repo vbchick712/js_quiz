@@ -1,3 +1,7 @@
+var quizContainer = document.getElementByID('quiz');
+var resultsContainer = document. getElementByID('results');
+var submitButton = document.getElementByID('submit');
+
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   function showQuestions(questions, quizContainer){
     var output = [];

@@ -21,10 +21,9 @@ var myQuestions = [
   },
 ];
 
-
-var quizContainer = document.getElementByID('quiz');
-var resultsContainer = document. getElementByID('results');
-var submitButton = document.getElementByID('submit');
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document. getElementById('results');
+var submitButton = document.getElementById('submit');
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   function showQuestions(questions, quizContainer){

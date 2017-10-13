@@ -29,6 +29,7 @@ generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
   function showQuestions(questions, quizContainer){
+    //we'll need a place to store the output and the answer choices
     var output = [];
     var answers;
 
@@ -41,7 +42,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         //...add an html radio button
         answers.push(
           '<lable>'
-            + '<input type="radio" name="question'+i+'" " value="'+letter+'">'
+            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
             + letter + ': '
             + questions[i].answers[letter]
           + '</label>'
@@ -61,7 +62,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
   function showResults(questions, quizContainer, resultsContainer){
     //gather answer containers from our quizContainer
-    var answerContainers=quizContainer.query.SelectorAll('.answers');
+    var answerContainers = quizContainer.querySelectorAll('.answers');
 
     //keep track of user's answers
     var userAnswer = '';
@@ -71,7 +72,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     for(var i=0; i<questions.length; i++){
 
       //find selected answer
-      userAnswer = (answerContainers[i].querySelector('input[name=quesiton'+i+']:checked')||{}).value;
+      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 
       //if answer is correct
       if(userAnswer===questions[i].correctAnswer){
@@ -90,7 +91,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     }
 
     //show number of correct answers out of total
-    resultsContainer.innerHTML = numCorrect + 'out of ' +questions.length;
+    resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
   }
 
   //show the questions

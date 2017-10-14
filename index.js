@@ -94,7 +94,7 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
   }
 
-  //show the questions
+  //show the questions right away
   showQuestions(questions, quizContainer);
 
   //when user clicks submit, shows resultsContainer
